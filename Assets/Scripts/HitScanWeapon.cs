@@ -13,7 +13,7 @@ public class HitScanWeapon : Weapon
         }
         return true;
     }
-
+   
 }
 //public ParticleSystem HitParticle = null;
 //HitScanFire();

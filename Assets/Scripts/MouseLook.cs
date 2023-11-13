@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class MouseLook : MonoBehaviour
 {
-    public float MouseSensitivity = 100f;
+    public float MouseSensitivity = 100.0f;
     public Transform PlayerBody = null;
-    float yRotation = 0;
-    // Start is called before the first frame update
+    float yRotation = 0f;
+
     void Start()
     {
 
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         
@@ -23,7 +23,7 @@ public class MouseLook : MonoBehaviour
         yRotation = -mouseY;
         yRotation = Mathf.Clamp(yRotation, -90f, 90f);
         transform.localRotation = Quaternion.Euler(yRotation, 0, 0);
-        transform.Rotate(Vector3.up * mouseX);
+        PlayerBody.Rotate(Vector3.up * mouseX);
 
 
     }

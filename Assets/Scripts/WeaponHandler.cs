@@ -23,6 +23,11 @@ public class WeaponHandler : MonoBehaviour
     public void Update()
     {
         HandleWeaponSwap();
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            FireHeldWeapon();
+        }
     }
 
     private void HandleWeaponSwap()
@@ -45,7 +50,20 @@ public class WeaponHandler : MonoBehaviour
             {
                 currentWeaponIndex = 0;
             }
-            CurrentWeapon = AvailableWeapons[currentWeaponIndex];
+            WeaponSwapAnimation(currentWeaponIndex);
+        }
+    }
+    private void WeaponSwapAnimation(int currentWeaponIndex)
+    {
+        CurrentWeapon.gameObject.SetActive(false);
+        CurrentWeapon = AvailableWeapons[currentWeaponIndex];
+        CurrentWeapon.gameObject.SetActive(true);
+    }
+    public void FireHeldWeapon()
+    {
+        if (CurrentWeapon != null)
+        {
+            CurrentWeapon.Fire();
         }
     }
 }

@@ -10,7 +10,6 @@ public class UnarmedWeapon : Weapon
         //{
         //    return false;
         //}
-
         return true;
     }
 }
