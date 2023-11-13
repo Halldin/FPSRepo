@@ -22,7 +22,6 @@ public class WeaponHandler : MonoBehaviour
     private float ScrollWheelDelta = 0.0f;
     public void Update()
     {
-  
         HandleWeaponSwap();
 
         if (Input.GetMouseButtonDown(0))

@@ -6,8 +6,9 @@ public class Weapon : MonoBehaviour
 {
     public WeaponState WeaponType = WeaponState.Total;
     public int Ammunition = 1337;
-   
-   
+    public float WeaponRange = 10000.0f;
+    public LayerMask HitMask = 0;
+
     public virtual bool Fire()
     {
         if (Ammunition < 1)
@@ -18,5 +19,5 @@ public class Weapon : MonoBehaviour
         return true;
     }
 }
-//public LayerMask WeaponRayMask = 0;
-//public float WeaponRange = 100.0f;
+
+

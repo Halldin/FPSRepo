@@ -4,18 +4,18 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public static Camera myCamera = null;
-   
 
+    public void Start()
+    {
+        PlayerMovement.myCamera = Camera.main;
+    }
     public void Update()
     {
       
 
     }
 
-    public void Awake()
-    {
-        PlayerMovement.myCamera = Camera.main;
-    }
+  
 
 
   

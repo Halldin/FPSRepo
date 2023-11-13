@@ -45,11 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e09bec75b129a054a89e52f561cf042b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WeaponType: 2
   Ammunition: 1000
-  WeaponRayMask:
-    serializedVersion: 2
-    m_Bits: 4
-  WeaponRange: 100
 --- !u!1 &6752434021664678828
 GameObject:
   m_ObjectHideFlags: 0
