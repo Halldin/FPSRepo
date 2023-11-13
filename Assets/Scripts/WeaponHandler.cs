@@ -22,6 +22,7 @@ public class WeaponHandler : MonoBehaviour
     private float ScrollWheelDelta = 0.0f;
     public void Update()
     {
+  
         HandleWeaponSwap();
 
         if (Input.GetMouseButtonDown(0))
@@ -44,7 +45,7 @@ public class WeaponHandler : MonoBehaviour
 
             if (currentWeaponIndex < 0)
             {
-                currentWeaponIndex = (int)WeaponState.Total + currentWeaponIndex;
+                currentWeaponIndex = (int)WeaponState.Total + -1;
             }
             if (currentWeaponIndex >= (int)WeaponState.Total)
             {

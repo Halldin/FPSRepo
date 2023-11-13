@@ -5,8 +5,8 @@ using UnityEngine;
 public class Weapon : MonoBehaviour
 {
     public WeaponState WeaponType = WeaponState.Total;
-    public int Ammunition = 0;
-
+    public int Ammunition = 1337;
+   
    
     public virtual bool Fire()
     {
