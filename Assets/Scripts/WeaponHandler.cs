@@ -7,11 +7,11 @@ public enum WeaponState
 {
     Unarmed,
     HitScan,
-    Projectile, 
+    Projectile,
     Total
 }
 public class WeaponHandler : MonoBehaviour
-{ 
+{
     [Header("Unarmed = Element 0 \n" +
         "Hitscan = Element 1 \n" +
         "Projectile = Element 2")]
@@ -24,14 +24,14 @@ public class WeaponHandler : MonoBehaviour
     {
         HandleWeaponSwap();
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonUp(0) && CurrentWeapon != null)
         {
-            FireHeldWeapon();
+            CurrentWeapon.Fire();
         }
     }
 
     private void HandleWeaponSwap()
-    { 
+    {
 
         ScrollWheelDelta += Input.mouseScrollDelta.y;
         if (Mathf.Abs(ScrollWheelDelta) > ScrollWheelBreakpoint)
@@ -59,13 +59,7 @@ public class WeaponHandler : MonoBehaviour
         CurrentWeapon = AvailableWeapons[currentWeaponIndex];
         CurrentWeapon.gameObject.SetActive(true);
     }
-    public void FireHeldWeapon()
-    {
-        if (CurrentWeapon != null)
-        {
-            CurrentWeapon.Fire();
-        }
-    }
+
 }
 
 
