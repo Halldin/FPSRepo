@@ -47,6 +47,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WeaponType: 2
   Ammunition: 1000
+  WeaponRange: 13337
+  IgnoreHitMask:
+    serializedVersion: 2
+    m_Bits: 0
+  SpawnProjectile: {fileID: 2730233607875012543, guid: 9d300c55ec6dff24e86bcaa95e95fdf8,
+    type: 3}
 --- !u!1 &6752434021664678828
 GameObject:
   m_ObjectHideFlags: 0

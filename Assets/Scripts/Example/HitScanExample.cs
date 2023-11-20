@@ -42,5 +42,7 @@ public class HitScanExample : MonoBehaviour
             var hitScanOnTarget = hit.transform.gameObject.GetComponent<HitScanExample>();
         }
     }
-  
+
+    
+
 }

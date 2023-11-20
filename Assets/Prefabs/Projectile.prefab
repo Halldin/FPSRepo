@@ -46,3 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WeaponType: 2
   Ammunition: 0
+  WeaponRange: 13337
+  IgnoreHitMask:
+    serializedVersion: 2
+    m_Bits: 0
