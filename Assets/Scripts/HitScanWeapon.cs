@@ -5,9 +5,11 @@ using UnityEngine;
 public class HitScanWeapon : Weapon
 {
     public ParticleSystem HitParticle = null;
+    public ParticleSystem MuzzleFlash = null;
+
     protected new void Start()
     {
-        HitParticle.gameObject.SetActive(false);
+  
         base.Start();
     }
     public override bool Fire()
@@ -25,15 +27,20 @@ public class HitScanWeapon : Weapon
 
     private void HitScanFire()
     {
-        HitParticle.gameObject.SetActive(false);
-
+        MuzzleFlash.Play();
+   
         Ray weaponRay = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
         RaycastHit hit = new();
 
         if (Physics.Raycast(weaponRay, out hit, WeaponRange, ~IgnoreHitMask))
         {
+            HitParticle.Play();
+            HitParticle.transform.SetParent(null);
+
             HitParticle.transform.position = hit.point;
-            HitParticle.gameObject.SetActive(true);
+            HitParticle.transform.forward = hit.normal;
+            HitParticle.transform.Translate(hit.normal.normalized * 0.1f);
+       
 
             HandleEntityHit(hit);
         }

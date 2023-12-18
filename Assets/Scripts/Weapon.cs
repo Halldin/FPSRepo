@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
+    public Agent Holder = null;
     public WeaponState WeaponType = WeaponState.Total;
     public int Ammunition = 1337;
 
     public float WeaponRange = 13337.0f;
     public LayerMask IgnoreHitMask = 0;
 
-    protected Camera MainCam = null;
     protected void Start()
     {
-        MainCam = Camera.main;
+     
     }
     public virtual bool Fire()
     {
