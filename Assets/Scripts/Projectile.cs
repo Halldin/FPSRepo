@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro.EditorUtilities;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Lumin;
 
 public class Projectile : MonoBehaviour
 {
-    public Agent Holder = null;
+    public PlayerDataExample myPlayerData = null;
+    public Weapon Creator = null;
 
     public GameObject ProjectileObject = null;
     public GameObject DetonationObject = null;
@@ -62,10 +65,8 @@ public class Projectile : MonoBehaviour
         var hitAgent = collision.gameObject.GetComponent<Agent>();
         if (hitAgent != null)
         {
-            if (Holder != hitAgent)
-            {
-
-            }
+            var playerComp = (PlayerMovement)hitAgent;
+            
         }
 
         Debug.Log("Collision");
@@ -75,6 +76,8 @@ public class Projectile : MonoBehaviour
             DetonationObject.SetActive(true);
             DetonationTime = DetionationLifetime;
         }
-    }
 
+        
+    }
+  
 }

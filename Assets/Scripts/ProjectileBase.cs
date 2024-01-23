@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class ProjectileBase : MonoBehaviour
 {
-    public Agent Holder = null;
+    public PlayerDataExample myPlayerData = null;
+    public Weapon Creator = null;
     [Header("Static Editor References")]
     public GameObject ProjectileObject = null;
     public GameObject DetonationObject = null;
@@ -78,13 +79,15 @@ public class ProjectileBase : MonoBehaviour
         {
             return;
         }
+        PlayerMovement.GlobalPlayerData.LastObjectHit = collision.gameObject.name;
+
         var hitAgent = collision.gameObject.GetComponent<Agent>();
         if (hitAgent != null)
         {
-            if (Holder != hitAgent)
-            {
+            //if (Holder != hitAgent)
+            //{
 
-            }
+            //}
         }
         ProjectileObject.SetActive(false);
         if(DetonationObject != null) 

@@ -6,19 +6,21 @@ public class Agent : MonoBehaviour
 {
     public virtual void OnCollisionEnter(Collision collision)
     {
-        
+        // Detta är base.OnCollisionEnter();
+        Debug.Log("I - " + gameObject.name + " was hit!");
     }
     public virtual void OnCollisionExit(Collision collision)
     {
 
     }
+
     public virtual void OnCollisionStay(Collision collision)
     {
 
     }
     public virtual void OnTriggerEnter(Collider other)
     {
-        
+
     }
     public virtual void OnTriggerExit(Collider other)
     {
@@ -43,14 +45,14 @@ public class Agent : MonoBehaviour
     //}
     //public override void OnTriggerEnter(Collider other)
     //{
-    //    base.OnTriggerEnter(collision);
+    //    base.OnTriggerEnter(other);
     //}
     //public override void OnTriggerExit(Collider other)
     //{
-    //    base.OnTriggerExit(collision);
+    //    base.OnTriggerExit(other);
     //}
     //public override void OnTriggerStay(Collider other)
     //{
-    //    base.OnTriggerStay(collision);
+    //    base.OnTriggerStay(other);
     //}
 }

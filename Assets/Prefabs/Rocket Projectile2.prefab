@@ -347,7 +347,7 @@ Transform:
   m_GameObject: {fileID: 7426584967274295442}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.439832, y: 2.06, z: 5.8924713}
+  m_LocalPosition: {x: 1.5756215, y: 2.06, z: 7.6181126}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -395,6 +395,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48e9c3e3104d17c48b44b6868dd9b7cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myPlayerData: {fileID: 11400000, guid: 84051be8d9c77bf4688bdf6b2676b815, type: 2}
+  Creator: {fileID: 0}
   ProjectileObject: {fileID: 4576185985658397451}
   DetonationObject: {fileID: 2105456500616918547}
   MovementSpeed: 20

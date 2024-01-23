@@ -16,7 +16,7 @@ public class ProjectileWeapon : Weapon
 
         ProjectileBase spawnedProjectile = Instantiate(ProjectileToSpawn);
         
-        spawnedProjectile.Holder = Holder;
+        spawnedProjectile.Creator = this;
 
         ProjectileToSpawn.transform.position = transform.position;
         spawnedProjectile.Init(transform.position,

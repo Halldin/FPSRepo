@@ -1,8 +1,12 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class PlayerMovement : Agent
 {
+    public PlayerDataExample myPlayerData = null;
+    public static PlayerDataExample GlobalPlayerData = null;
+
     public CharacterController characterController;
 
     public float speed = 12.0f;
@@ -15,6 +19,10 @@ public class PlayerMovement : Agent
     Vector3 velocity = Vector3.zero;
     bool isGrounded = false;
 
+    public void Awake()
+    {
+        GlobalPlayerData = myPlayerData;
+    }
     public void Update()
     {
         isGrounded = Physics.CheckSphere(Groundcheck.position, GroundDistance, GroundMask);
@@ -29,9 +37,8 @@ public class PlayerMovement : Agent
 
         velocity.y += gravity * Time.deltaTime;
         characterController.Move(velocity * Time.deltaTime);
-
+       
     }
-
 
     public override void OnCollisionEnter(Collision collision)
     {
@@ -45,17 +52,17 @@ public class PlayerMovement : Agent
     {
         base.OnCollisionStay(collision);
     }
-    public override void OnTriggerEnter(Collider collision)
+    public override void OnTriggerEnter(Collider other)
     {
-        base.OnTriggerEnter(collision);
+        base.OnTriggerEnter(other);
     }
-    public override void OnTriggerExit(Collider collision)
+    public override void OnTriggerExit(Collider other)
     {
-        base.OnTriggerExit(collision);
+        base.OnTriggerExit(other);
     }
-    public override void OnTriggerStay(Collider collision)
+    public override void OnTriggerStay(Collider other)
     {
-        base.OnTriggerStay(collision);
+        base.OnTriggerStay(other);
     }
 
 

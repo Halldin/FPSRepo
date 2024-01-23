@@ -75,7 +75,8 @@ public class WeaponHandler : MonoBehaviour
         }
         CurrentWeapon = AvailableWeapons[currentWeaponIndex];
         CurrentWeapon.gameObject.SetActive(true);
-        CurrentWeapon.Holder = myPlayerMovement;
+        CurrentWeapon.HoldingWeaponHandler = this;
+        //CurrentWeapon.Holder = myPlayerMovement;
     }
 
 

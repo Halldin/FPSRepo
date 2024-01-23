@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    public Agent Holder = null;
+    public WeaponHandler HoldingWeaponHandler = null;
     public WeaponState WeaponType = WeaponState.Total;
     public int Ammunition = 1337;
 
