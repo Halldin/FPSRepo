@@ -698,6 +698,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40c694b8e79f0a24b866db95e0617508, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1484872868 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8345070700224654063, guid: 09aade0ecefd01e4b8f7661acf64f5c2,
+    type: 3}
+  m_PrefabInstance: {fileID: 2084445384}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1484872873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1484872868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31f40269173322f47937c886b373a3a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!198 &1485825775 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 263999426184066330, guid: b62ca8370b9cb884fa2223f0522f0b1f,
@@ -810,6 +828,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 2742374090662089873, guid: 09aade0ecefd01e4b8f7661acf64f5c2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 5739698998690087621, guid: 09aade0ecefd01e4b8f7661acf64f5c2,
         type: 3}
       propertyPath: m_Layer
@@ -918,7 +941,33 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 2031719654}
+    - targetCorrespondingSourceObject: {fileID: 8345070700224654063, guid: 09aade0ecefd01e4b8f7661acf64f5c2,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1484872873}
+    - targetCorrespondingSourceObject: {fileID: 2742374090662089873, guid: 09aade0ecefd01e4b8f7661acf64f5c2,
+        type: 3}
+      insertIndex: 1
+      addedObject: {fileID: 2108936665}
   m_SourcePrefab: {fileID: 100100000, guid: 09aade0ecefd01e4b8f7661acf64f5c2, type: 3}
+--- !u!1 &2108936660 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2742374090662089873, guid: 09aade0ecefd01e4b8f7661acf64f5c2,
+    type: 3}
+  m_PrefabInstance: {fileID: 2084445384}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2108936665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2108936660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31f40269173322f47937c886b373a3a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &120932223801845754
 GameObject:
   m_ObjectHideFlags: 0
@@ -1317,6 +1366,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 84051be8d9c77bf4688bdf6b2676b815,
         type: 2}
+    - target: {fileID: 4712085062375955008, guid: b62ca8370b9cb884fa2223f0522f0b1f,
+        type: 3}
+      propertyPath: GroundMask.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
     - target: {fileID: 5314866083743687649, guid: b62ca8370b9cb884fa2223f0522f0b1f,
         type: 3}
       propertyPath: looping
@@ -1488,19 +1542,19 @@ PrefabInstance:
         type: 3}
       propertyPath: availableWeapons.Array.data[1]
       value: 
-      objectReference: {fileID: 11400000, guid: 34dd600749a8c7e4489550b91663b249,
+      objectReference: {fileID: 11400000, guid: a4d66af3ec07d9948849ababa756db56,
         type: 2}
     - target: {fileID: 8798580433374528201, guid: b62ca8370b9cb884fa2223f0522f0b1f,
         type: 3}
       propertyPath: availableWeapons.Array.data[2]
       value: 
-      objectReference: {fileID: 11400000, guid: 34dd600749a8c7e4489550b91663b249,
+      objectReference: {fileID: 11400000, guid: 6e111de43bf15ae4e91667a28c9098f2,
         type: 2}
     - target: {fileID: 8798580433374528201, guid: b62ca8370b9cb884fa2223f0522f0b1f,
         type: 3}
       propertyPath: availableWeapons.Array.data[3]
       value: 
-      objectReference: {fileID: 11400000, guid: 34dd600749a8c7e4489550b91663b249,
+      objectReference: {fileID: 11400000, guid: 2373e60948b175744b32dd8fc9f80a09,
         type: 2}
     - target: {fileID: 8798580433374528201, guid: b62ca8370b9cb884fa2223f0522f0b1f,
         type: 3}

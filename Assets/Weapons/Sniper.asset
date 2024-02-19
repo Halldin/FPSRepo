@@ -12,33 +12,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cbf821e567c6b1409f85c26bf968336, type: 3}
   m_Name: Sniper
   m_EditorClassIdentifier: 
-  damagePerPellet: 20
+  damagePerPellet: 75
   pelletsPerShot: 1
-  ammunition: 31
-  fireRate: 0.2
-  reloadTime: 2
-  accuracy: 15
-  range: 20
+  ammunition: 8
+  fireRate: 1.5
+  reloadTime: 2.5
+  accuracy: 0
+  range: 100
   falloffCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1.0015564
-      inSlope: -0.09851363
-      outSlope: -0.09851363
-      tangentMode: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.025715996
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.95
+      value: 1
+      inSlope: 0.0025700165
+      outSlope: 0.0025700165
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.5294196
+      outWeight: 0.33333334
     - serializedVersion: 3
       time: 1
       value: 0
-      inSlope: -1.7325324
-      outSlope: -1.7325324
-      tangentMode: 0
+      inSlope: -19.999996
+      outSlope: -19.999996
+      tangentMode: 34
       weightedMode: 0
-      inWeight: 0.06854129
+      inWeight: 0.33333334
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
