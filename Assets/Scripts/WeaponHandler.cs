@@ -6,93 +6,59 @@ using UnityEngine;
 
 public enum WeaponState
 {
+    Pistol,
+    Shotgun,
+    AR,
+    Sniper,
+    RocketLauncher,
+    Granade,
     Unarmed,
-    HitScan,
-    Projectile,
     Total
 }
 public class WeaponHandler : MonoBehaviour
 {
-    public PlayerMovement myPlayerMovement = null;
-    [Header("Unarmed = Element 0 \n" +
-        "Hitscan = Element 1 \n" +
-        "Projectile = Element 2")]
-    public Weapon[] AvailableWeapons = new Weapon[(int)WeaponState.Total];
-    public Weapon CurrentWeapon = null;
+    [SerializeField] PlayerMovement myPlayerMovement = null;
+    [SerializeField] Weapon[] availableWeapons;
+    [SerializeField] Weapon currentWeapon = null;
 
-    public float ScrollWheelBreakpoint = 1.0f;
-    private float ScrollWheelDelta = 0.0f;
+    [SerializeField] float scrollWheelBreakpoint = 1.0f;
+    private float scrollWheelDelta = 0.0f;
+    int currentWeaponIndex;
 
     
     public void Start()
     {  
     
-        int currentWeaponIndex = (int)CurrentWeapon.WeaponType;
-        WeaponSwapAnimation(currentWeaponIndex);
-        
     }
     public void Update()
     {
         HandleWeaponSwap();
+        currentWeapon = availableWeapons[currentWeaponIndex];
 
-        if (Input.GetMouseButtonUp(0) && CurrentWeapon != null)
+        if (Input.GetMouseButtonUp(0) && currentWeapon != null)
         {
-            CurrentWeapon.Fire();
+            currentWeapon.Shoot();
         }
     }
 
     private void HandleWeaponSwap()
     {
-
-        ScrollWheelDelta += Input.mouseScrollDelta.y;
-        if (Mathf.Abs(ScrollWheelDelta) > ScrollWheelBreakpoint)
+        scrollWheelDelta += Input.mouseScrollDelta.y;
+        
+        if (Mathf.Abs(scrollWheelDelta) > scrollWheelBreakpoint)
         {
+            int swapDirection = (int)Mathf.Sign(scrollWheelDelta);
+            scrollWheelDelta = 0.0f;
 
-            int swapDirection = (int)Mathf.Sign(ScrollWheelDelta);
-            ScrollWheelDelta = 0.0f;
-
-            int currentWeaponIndex = (int)CurrentWeapon.WeaponType;
             currentWeaponIndex += swapDirection;
-
             if (currentWeaponIndex < 0)
             {
-                currentWeaponIndex = (int)WeaponState.Total + -1;
+                currentWeaponIndex = (int)WeaponState.Total - 1;
             }
             if (currentWeaponIndex >= (int)WeaponState.Total)
             {
                 currentWeaponIndex = 0;
             }
-            //
-            WeaponSwapAnimation(currentWeaponIndex);
         }
     }
-    private void WeaponSwapAnimation(int currentWeaponIndex)
-    {
-        Debug.Log(currentWeaponIndex);
-        foreach (var weapon in AvailableWeapons)
-        {
-            weapon.gameObject.SetActive(false);
-        }
-        CurrentWeapon = AvailableWeapons[currentWeaponIndex];
-        CurrentWeapon.gameObject.SetActive(true);
-        CurrentWeapon.HoldingWeaponHandler = this;
-        //CurrentWeapon.Holder = myPlayerMovement;
-    }
-
-
-
 }
-
-
-
-//MouseAxisDelta -= swapDirectionNumber * MouseAxisWeaponSwapBreakpoint;
-//int currentWeaponIndex = (int)CurrentWeaponState + swapDirectionNumber;
-//if (currentWeaponIndex >= (int)WeaponState.Total)
-//{
-//    currentWeaponIndex = 0;
-//}
-//else if (currentWeaponIndex < 0)
-//{
-//    currentWeaponIndex = (int)WeaponState.Total - 1;
-//}
-//WeaponSwapAnimation(currentWeaponIndex);
