@@ -12,12 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cbf821e567c6b1409f85c26bf968336, type: 3}
   m_Name: AR
   m_EditorClassIdentifier: 
+  weaponType: 0
   damagePerPellet: 20
   pelletsPerShot: 1
   ammunition: 31
   fireRate: 0.2
   reloadTime: 2
   accuracy: 15
+  fireMode: 1
+  burstAmmount: 0
+  burstIntervall: 0
   range: 20
   falloffCurve:
     serializedVersion: 2
